@@ -9,7 +9,8 @@
 
     <BlogLayout>
         <template #header>
-            <Slider></Slider>
+            <!-- <Slider></Slider> -->
+            <Hero></Hero>
         </template>
         <div class="px-4">
             <Cards :blogs="blogsComputed"></Cards>
@@ -20,9 +21,10 @@
 <script setup>
 import BlogLayout from "@/Layouts/BlogLayout.vue";
 import { Head, Link } from "@inertiajs/vue3";
-import Slider from "./Public/Home/Slider.vue";
+// import Slider from "./Public/Home/Slider.vue";
 import Cards from "./Public/Home/Cards.vue";
 import { computed } from "@vue/reactivity";
+import Hero from "./Public/Home/Hero.vue";
 
 const props = defineProps({
     blogs: Object,

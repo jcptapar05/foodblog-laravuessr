@@ -2,10 +2,10 @@
     <Navbar></Navbar>
 
     <div class="p-0">
-        <div class="w-100">
+        <div class="w-100 mb-10">
             <slot name="header"></slot>
         </div>
-        <div class="container mx-auto mt-20 mb-32 md:px-10">
+        <div class="container mx-auto mb-32 md:px-10">
             <slot></slot>
         </div>
     </div>

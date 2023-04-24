@@ -69,8 +69,8 @@ Route::middleware('auth')->group(function () {
 });
 // Dashboard
 
-Route::any('{url}', function () {
-    return Inertia::render('PageNotFound');
-})->where('url', '.*');
+// Route::any('{url}', function () {
+//     return Inertia::render('PageNotFound');
+// })->where('url', '.*');
 
 require __DIR__ . '/auth.php';

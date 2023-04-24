@@ -6,7 +6,7 @@
             <Link href="/" class="flex items-center">
                 <span
                     class="self-center text-2xl font-semibold whitespace-nowrap"
-                    >PinoyFoodTrip</span
+                    >FoodTrips</span
                 >
             </Link>
             <button
@@ -58,13 +58,13 @@
                             :class="$page.url == '/foods' ? 'text-blue-600' : 'text-gray-900'">Foods</Link
                         >
                     </li>
-                    <li>
-                        <Link
+                    <!-- <li>
+                        <a
                             href="#"
                             class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent"
-                            :class="$page.url == '/travels' ? 'text-blue-600' : 'text-gray-900'">Travels</Link
+                            :class="$page.url == '/travels' ? 'text-blue-600' : 'text-gray-900'">Travels</a
                         >
-                    </li>
+                    </li> -->
                     <li>
                         <!-- <input type="text" class="rounded-3xl ps-6" placeholder="Search..."> -->
                     </li>
