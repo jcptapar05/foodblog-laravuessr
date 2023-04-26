@@ -49,9 +49,12 @@ class BlogController extends Controller
         ]);
 
         $image_path = '';
-        if ($request->hasFile('image')) {
-            $image_path = $request->file('image')->store('image', 'public');
-        }
+        // if ($request->hasFile('image')) {
+        //     $image_path = $request->file('image')->store('image', 'public');
+        // }
+
+        $image_path = time() . '.' . $request->image->getClientOriginalExtension();
+        $request->image->move(public_path('/storage/image'), $image_path);
 
         Blog::create([
             'name' => $request->name,
@@ -93,8 +96,11 @@ class BlogController extends Controller
 
         $image = $blog->image;
         if ($request->hasFile('image')) {
-            Storage::delete('public/' . $blog->image);
-            $image = $request->file('image')->store('image', 'public');
+            Storage::delete('public/storage/image' . $blog->image);
+            // $image = $request->file('image')->store('image', 'public');
+
+            $image = time() . '.' . $request->image->getClientOriginalExtension();
+            $request->image->move(public_path('/storage/image'), $image);
         }
 
         $blog->update([

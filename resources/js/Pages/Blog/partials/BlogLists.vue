@@ -14,7 +14,7 @@
                     <td class="py-2 border">{{ blog.name }}</td>
                     <td class="py-2 border">
                         <img
-                            :src="`/storage/${blog.image}`"
+                            :src="`/storage/image/${blog.image}`"
                             class="h-16 mx-auto"
                             :alt="blog.name"
                         />

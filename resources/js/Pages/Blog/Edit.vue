@@ -147,7 +147,7 @@ const item = useForm({
 });
 
 const submit = () => {
-    router.post(route("blogs.update", props.blog.id), {
+    router.post(route("blogs.update", props.blog.slug), {
         _method: "put",
         name: item.name,
         description: item.description,
