@@ -10,8 +10,8 @@
         >
             <img
                 class="rounded-t-2xl h-60 w-full object-cover"
-                :src="'/storage/' + blog.image"
-                :alt="blog.name + 'image'"
+                :src="'/storage/image/' + blog.image"
+                :alt="'/storage/image/' + blog.name + 'image'"
             />
             <div class="p-5 grid grid-cols-1 gap-4 content-around">
                 <div>
