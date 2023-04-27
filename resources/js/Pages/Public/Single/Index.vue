@@ -14,9 +14,10 @@
 
             <img
                 class="w-full object-cover rounded-3xl"
-                :src="`/storage/${blog.image}`"
-                alt=""
+                :src="`/storage/image/${blog.image}`"
+                :alt="blog.image"
             />
+            
             <p class="my-10">{{ blog.description }}</p>
 
             <div class="mb-10">
