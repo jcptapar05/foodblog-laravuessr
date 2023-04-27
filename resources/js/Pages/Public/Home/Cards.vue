@@ -9,7 +9,7 @@
             class="max-w-sm bg-white rounded-2xl shadow hover:-translate-y-1 hover:shadow-md transition duration-150 ease-out mx-auto sm:mx-0"
         >
             <img
-                class="rounded-t-2xl h-60 w-full object-cover"
+                class="rounded-t-2xl h-60 w-screen object-cover"
                 :src="'/storage/image/' + blog.image"
                 :alt="'/storage/image/' + blog.name + 'image'"
             />
