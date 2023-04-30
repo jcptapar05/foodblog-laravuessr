@@ -41,6 +41,10 @@ const showingNavigationDropdown = ref(false);
                                 <NavLink :href="route('blogs.index')">
                                     Foods
                                 </NavLink>
+
+                                <NavLink :href="route('hero.index')">
+                                    Hero
+                                </NavLink>
                             </div>
 
 

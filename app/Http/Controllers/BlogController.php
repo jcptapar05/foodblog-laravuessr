@@ -37,7 +37,6 @@ class BlogController extends Controller
      */
     public function store(StoreblogRequest $request)
     {
-        // dd($request);
         $request->validate([
             'name' => 'required|string|max:255',
             'description' => 'required',
@@ -93,7 +92,6 @@ class BlogController extends Controller
      */
     public function update(UpdateblogRequest $request, blog $blog)
     {
-
         $image = $blog->image;
         if ($request->hasFile('image')) {
             Storage::delete('public/storage/image' . $blog->image);

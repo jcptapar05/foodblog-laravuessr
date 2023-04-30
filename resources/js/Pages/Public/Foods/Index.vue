@@ -50,9 +50,9 @@
 </template>
 
 <script setup>
+import Cards from "@/Components/Cards/Cards.vue";
 import BlogLayout from "@/Layouts/BlogLayout.vue";
 import { Head, Link, router } from "@inertiajs/vue3";
-import Cards from "../Home/Cards.vue";
 import { ref, watch } from "vue";
 
 const props = defineProps({
