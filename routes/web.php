@@ -24,7 +24,9 @@ use Inertia\Inertia;
 // Public
 // Home
 Route::get('/', function () {
-    $blogs = Blog::all();
+    // $blogs = Blog::all();
+
+    $blogs = Blog::latest()->take(4)->get();
 
     $hero = Hero::all();
     

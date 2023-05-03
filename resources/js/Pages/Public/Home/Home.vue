@@ -1,19 +1,18 @@
 <template>
-    <Head title="Home">
+    <Head title="Taste of the Philippines: Food & Travel Adventures">
         <meta
             head-key="description"
             name="description"
-            content="Experience the best of Filipino cuisine and culture with our food and travel guide to the Philippines. Discover mouth-watering local dishes, breathtaking landscapes, and insider tips from locals. Start planning your trip to the Philippines today!"
+            content="Explore the beauty and flavor of the Philippines with our food and travel guide. Discover authentic Filipino cuisine and exciting travel destinations."
         />
     </Head>
 
     <BlogLayout>
         <template #header>
-            <!-- <Slider></Slider> -->
             <Hero :hero="hero"></Hero>
         </template>
-        <div class="px-4">
-            <Cards :blogs="blogsComputed"></Cards>
+        <div class="container mx-auto px-4">
+            <Cards :blogs="blogs"></Cards>
         </div>
     </BlogLayout>
 </template>
@@ -21,7 +20,6 @@
 <script setup>
 import BlogLayout from "@/Layouts/BlogLayout.vue";
 import { Head, Link } from "@inertiajs/vue3";
-// import Slider from "./Public/Home/Slider.vue";
 import { computed } from "@vue/reactivity";
 import Cards from "@/Components/Cards/Cards.vue";
 import Hero from "@/Components/Hero/Hero.vue";
@@ -31,8 +29,8 @@ const props = defineProps({
     hero: Object
 });
 
-const blogsComputed = computed(() => {
-    return props.blogs.splice(0, 4);
-});
+// const blogsComputed = computed(() => {
+//     return props.blogs.splice(0, 4);
+// });
 
 </script>

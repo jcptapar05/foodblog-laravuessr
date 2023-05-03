@@ -1,17 +1,17 @@
 <template>
     <Head>
-        <title>Filipino Foods</title>
+        <title>Filipino Kitchen: Authentic Recipes & Culinary Adventures</title>
         <meta
             head-key="description"
             name="description"
-            content="Embark on a culinary journey through the Philippines with our guide to authentic Filipino cuisine. Discover the rich flavors and diverse regional dishes that make Filipino food unique. Join us in exploring the best places to eat and experience the Philippines' vibrant food culture!"
+            content="Experience the Best of the Philippines with our Recipes and Travel Guide. Discover Authentic Filipino Cuisine and Amazing Travel Destinations."
         />
     </Head>
 
     <BlogLayout>
         <div class="px-4">
             <div class="text-center">
-                <h1 class="mb-32 font-black text-7xl">Filipino Foods</h1>
+                <h1 class="mb-32 font-black text-7xl">Filipino Foods recipes</h1>
             </div>
 
             <div>

@@ -46,16 +46,16 @@
                     <li>
                         <Link
                             href="/"
-                            class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent"
+                            class="block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 md:dark:hover:bg-transparent"
                             aria-current="page"
-                            :class="$page.url == '/' ? 'text-blue-600' : 'text-gray-900'">Home</Link
+                            :class="$page.url == '/' ? 'text-green-600' : 'text-gray-900'">Home</Link
                         >
                     </li>
                     <li>
                         <Link
                             href="/foods"
-                            class="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 md:dark:hover:bg-transparent"
-                            :class="$page.url == '/foods' ? 'text-blue-600' : 'text-gray-900'">Foods</Link
+                            class="block py-2 pl-3 pr-4  rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-green-700 md:p-0 md:dark:hover:text-green-500 md:dark:hover:bg-transparent"
+                            :class="$page.url == '/foods' ? 'text-green-600' : 'text-gray-900'">Blogs</Link
                         >
                     </li>
                     <!-- <li>
