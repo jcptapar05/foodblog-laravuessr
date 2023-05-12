@@ -18,7 +18,7 @@
                 :alt="blog.image"
             />
             
-            <p class="my-10">{{ blog.description }}</p>
+            <p class="my-10" v-html="blog.description"></p>
 
             <div class="mb-10">
                 <div class="mb-3 flex items-center gap-x-2">
@@ -52,10 +52,10 @@
 
             <div class="mt-10 mb-12">
                 <div class="mb-3 flex items-center gap-x-2">
-                    <h4 class="text-lg font-semibold">Instruction</h4>
+                    <h4 class="text-lg font-semibold">Instructions</h4>
                     <small class="mt-0">(pagluluto)</small>
                 </div>
-                <p v-html="blog.instructions"></p>
+                <ol type="1" v-html="blog.instructions" class="instructions" style="list-style-type: decimal; list-style-position: inside;"></ol>
             </div>
 
             <h4 class="mb-2 text-lg font-semibold">Sample video: (CTTO)</h4>
@@ -74,8 +74,12 @@ defineProps({
 });
 </script>
 
-<style scoped>
+<style>
 img {
     height: 500px;
+}
+
+.instructions li {
+    margin-bottom: 20px;
 }
 </style>

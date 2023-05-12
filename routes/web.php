@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HeroController;
+use App\Http\Controllers\LogoController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Blog;
 use App\Models\Hero;
@@ -62,6 +63,7 @@ Route::get('/foods', function (Request $request) {
 
         'filters' => Request::only(['search']),
     ]);
+    
 });
 
 // Admin
@@ -73,6 +75,11 @@ Route::get('/admin/dashboard', function () {
 Route::resource('/admin/blogs', BlogController::class)->middleware(['auth', 'verified']);
 
 Route::resource('/admin/hero', HeroController::class)->middleware(['auth', 'verified']);
+Route::resource('/admin/logo', LogoController::class)->middleware(['auth', 'verified']);
+
+Route::get('/admin/settings', function () {
+    return Inertia::render('Settings/Index');
+})->name('admin.settings')->middleware(['auth', 'verified']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

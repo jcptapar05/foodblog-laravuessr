@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Hero;
-use App\Http\Requests\StoreHeroRequest;
-use App\Http\Requests\UpdateHeroRequest;
+use App\Models\Logo;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
-class HeroController extends Controller
+class LogoController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return Inertia::render('Settings/Hero/Index');
+        return Inertia::render('Settings/Logo/Index');
     }
 
     /**
@@ -23,16 +22,15 @@ class HeroController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreHeroRequest $request)
+    public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
 
@@ -41,18 +39,17 @@ class HeroController extends Controller
         $image_path = time() . '.' . $request->image->getClientOriginalExtension();
         $request->image->move(public_path('/storage/image'), $image_path);
 
-        Hero::create([
-            'name' => $request->name,
+        Logo::create([
             'image' => $image_path,
         ]);
 
-        return redirect()->route('blogs.index');
+        return redirect()->route('admin.settings');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Hero $hero)
+    public function show(Logo $logo)
     {
         //
     }
@@ -60,38 +57,37 @@ class HeroController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Hero $hero)
+    public function edit(Logo $logo)
     {
-        return Inertia::render('Settings/Hero/Edit', [
-            "hero" => $hero
+        return Inertia::render('Settings/Logo/Edit', [
+            "logo" => $logo
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateHeroRequest $request, Hero $hero)
+    public function update(Request $request, Logo $logo)
     {
-        $image = $hero->image;
+        $image = $logo->image;
         if ($request->hasFile('image')) {
-            Storage::delete('public/storage/image' . $hero->image);
+            Storage::delete('public/storage/image' . $logo->image);
 
             $image = time() . '.' . $request->image->getClientOriginalExtension();
             $request->image->move(public_path('/storage/image'), $image);
         }
 
-        $hero->update([
-            'name' => $request->name,
+        $logo->update([
             'image' => $image,
         ]);
 
-        return redirect()->route('hero.index');
+        return redirect()->route('admin.settings');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Hero $hero)
+    public function destroy(Logo $logo)
     {
         //
     }
